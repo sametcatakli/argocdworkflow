@@ -15,17 +15,17 @@ spec:
         app: my-app
     spec:
       containers:
-      - name: my-app-container
-        image: bryamx26/flask:773f2c46b861859534dc5b36df30ce8f3e86e513
-        ports:
-        - containerPort: 80
-        resources:
-          requests:
-            memory: "128Mi"
-            cpu: "250m"
-          limits:
-            memory: "256Mi"
-            cpu: "500m"
+        - name: my-app-container
+          image: samsam067/flask:773f2c46b861859534dc5b36df30ce8f3e86e513
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
 ---
 apiVersion: v1
 kind: Service
@@ -44,16 +44,16 @@ metadata:
   name: my-app-ingress
 spec:
   rules:
-  - host: my-app.local
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: my-app-service
-            port:
-              number: 80
+    - host: my-app.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: my-app-service
+                port:
+                  number: 80
 # --- commande pour configurer le ingress controller ---
 
 #kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml

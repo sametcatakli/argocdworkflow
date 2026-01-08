@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: my-app-container
-          image: samsam067/flask:773f2c46b861859534dc5b36df30ce8f3e86e513
+          image: samsam067/flask:e0134c792a018ca6363aa89960826c39fad50a9d
           ports:
             - containerPort: 80
           resources:

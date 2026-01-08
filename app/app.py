@@ -18,6 +18,7 @@ def hello_world():
         <h1>HEH Projet</h1>
         <p>Tricarico</p>
         <p>Samet</p>
+        <p>2026</p>
     </div>
 </body>
 </html>
